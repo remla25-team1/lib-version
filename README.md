@@ -17,10 +17,28 @@ pip install https://github.com/remla25-team1/lib-version/dist/lib_version-0.1.1-
 pip install https://github.com/remla25-team1/lib-version/dist/lib_version-0.1.1.tar.gz
 ```
 
-3. Usage
+## Usage
+
 After installation, you can import and use the VersionUtil class to get the project version:
 ```Python
 from versionutil import VersionUtil
 
 print(VersionUtil.get_version())
+```
+
+Expected output:
+```bash
+x.y.z 
+# current version is 0.1.1
+```
+
+## Running tests
+Clone the repository and run the tests like this:
+```bash
+git clone https://github.com/remla25-team1/lib-version.git
+cd lib-version
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .[dev]
+pytest
 ```
