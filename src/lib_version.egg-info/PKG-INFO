@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: lib-version
+Version: 0.1.0.post0
+Summary: A version-aware library for retrieving its own version
+Author-email: Anna Visman <a.c.visman@student.tudelft.nl>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# lib-version
+
+
+```
+python3 -m venv .venv
+source .venv/bin/activat
+```
+
+Navigate to ```lib-version``` directory.
+
+```
+pip install --upgrade pip
+pip install -e .
+```
+
+You should see output like:
+```
+Successfully built lib-version
+Installing collected packages: lib-version
+Successfully installed lib-version-0.0.post1
+```
+
+Create a Git tag:
+```
+export GITHUB_TOKEN=YOUR_TOKEN_HERE
+git remote set-url origin \
+  https://${GITHUB_TOKEN}@github.com/remla25-team1/lib-version.git
+
+git tag v0.1.0
+git push origin --tags
+```
+
+You should see output like this:
+```
+To https://github.com/remla25-team1/lib-version.git
+ * [new tag]         v0.1.0 -> v0.1.0
+```

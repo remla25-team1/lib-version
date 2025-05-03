@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/lib_version.egg-info/PKG-INFO
+src/lib_version.egg-info/SOURCES.txt
+src/lib_version.egg-info/dependency_links.txt
+src/lib_version.egg-info/top_level.txt
+src/versionutil/__init__.py
+src/versionutil/version.py
+tests/test_version.py
