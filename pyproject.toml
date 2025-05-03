@@ -1,0 +1,24 @@
+# lib-version/pyproject.toml
+[build-system]
+requires = ["setuptools>=61", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lib-version"
+description = "A version-aware library that can can be asked for the version of the library."
+authors = [{ name = "Anna Visman", email = "anna.visman@student.tudelft.nl" }]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dynamic = ["version"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
+version_scheme = "no-guess-dev"
+local_scheme = "no-local-version"
+write_to = "src/versionutil/_version.py"
