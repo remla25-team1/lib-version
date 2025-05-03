@@ -42,3 +42,20 @@ source .venv/bin/activate
 pip install -e .[dev]
 pytest
 ```
+
+## Updating the version
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools wheel build setuptools-scm
+
+git add .
+git commit -m "Your commit message here"
+git tag vx.y.z # update with the actual version number 
+
+rm -rf dist/ build/ src/*.egg-info
+python -m build
+
+git push origin "branch name"
+git push origin vx.y.z # update with the actual version number 
+```
