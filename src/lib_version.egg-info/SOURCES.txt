@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+dist/lib_version-0.1.1-py3-none-any.whl
+dist/lib_version-0.1.1.tar.gz
+src/lib_version.egg-info/PKG-INFO
+src/lib_version.egg-info/SOURCES.txt
+src/lib_version.egg-info/dependency_links.txt
+src/lib_version.egg-info/top_level.txt
+src/versionutil/__init__.py
+src/versionutil/_version.py
+tests/test_version.py
