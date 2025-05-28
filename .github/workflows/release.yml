@@ -41,4 +41,4 @@ jobs:
                   dist/*.whl
                   dist/*.tar.gz
               env:
-                GITHUB_TOKEN: ${{ secrets.WRITE_PERMISSION }}
+                GITHUB_TOKEN: ${{ secrets.OP_TOKEN }}
