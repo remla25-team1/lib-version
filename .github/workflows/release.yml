@@ -4,14 +4,17 @@ on:
   push:
     tags: 
       - "v*.*.*"
-      - "v*.*.*-pre*"
+      - "v*.*.*-pre*-*"
 
 jobs:
     build:
-        runs-on: ubuntu-24.04
+        runs-on: ubuntu-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
+              with:
+                ref: ${{ github.ref }}    # The exact tag being released
+                fetch-depth: 0            # Get full history for version checking
 
             - name: Set up Python 3.12.2
               uses: actions/setup-python@v5
@@ -39,34 +42,3 @@ jobs:
                   dist/*.tar.gz
               env:
                 GITHUB_TOKEN: ${{ secrets.WRITE_PERMISSION }}
-
-
-# name: Release
-
-# on:
-#   push:
-#     tags:
-#       - 'v*.*.*'
-
-# jobs:
-#   publish:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#         with:
-#           fetch-depth: 0
-#       - name: Set up Python
-#         uses: actions/setup-python@v4
-#         with:
-#           python-version: '3.x'
-#       - name: Install build tools
-#         run: |
-#           python -m pip install --upgrade pip build twine
-#       - name: Build package
-#         run: python -m build --sdist --wheel
-#       - name: Publish to PyPI
-#         env:
-#           TWINE_USERNAME: __token__
-#           TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-#         run: |
-#           python -m twine upload dist/*
